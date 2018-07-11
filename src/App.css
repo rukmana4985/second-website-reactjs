@@ -93,3 +93,25 @@
   border-radius: 10px;
   display:flex;
 }
+.about-banner{
+  max-width: 100%;
+  height: 380px;
+  background: linear-gradient(  rgba(240, 218, 129, 0.5), rgba(241, 170, 94, 0.9)), url('./components/images/about-banner.jpg') center  no-repeat ;
+  background-size: cover;
+}
+.about-over-banner
+{
+  width: 100%;
+  height: auto;
+  padding-top: 15%;
+  position: absolute;
+}
+.grey{
+  background: rgb(247, 247, 247);
+}
+.blog-banner{
+  max-width: 100%;
+  height: 380px;
+  background: linear-gradient(  rgba(240, 218, 129, 0.6), rgba(241, 170, 94, 0.9)), url('./components/images/gustavo-centurion-665623-unsplash.jpg') center  no-repeat ;
+  background-size: cover;
+}

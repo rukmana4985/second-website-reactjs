@@ -1,141 +1,178 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import classnames from 'classnames';
-import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
-import CardMedia from '@material-ui/core/CardMedia';
-import CardContent from '@material-ui/core/CardContent';
-import CardActions from '@material-ui/core/CardActions';
-import Collapse from '@material-ui/core/Collapse';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import red from '@material-ui/core/colors/red';
-import FavoriteIcon from '@material-ui/icons/Favorite';
-import ShareIcon from '@material-ui/icons/Share';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Typography, Grid, Button, Card, CardMedia, CardContent } from '@material-ui/core';
+import PropTypes from 'prop-types';
 
-const styles = theme => ({
+
+const style = theme => ({
+  root: {
+    flexGrow: 1,
+    width : '80%',
+    marginLeft : '10%',
+    marginTop: '5%',
+  },
+
+
+  root_card : {
+    flexGrow: 1,
+    width : '70%',
+    marginLeft : '20%',
+  },
+
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: 'center',
+      color: theme.palette.text.secondary,
+  },
+  image : {
+    width : '100%'
+  },
   card: {
-    maxWidth: 400,
+    maxWidth: 345,
+    marginTop : '5%',
+    boxShadow : '0px 2px 40px 0px rgba(198, 198, 198, 0.7)'
   },
   media: {
     height: 0,
     paddingTop: '56.25%', // 16:9
   },
-  actions: {
-    display: 'flex',
-  },
-  expand: {
-    transform: 'rotate(0deg)',
-    transition: theme.transitions.create('transform', {
-      duration: theme.transitions.duration.shortest,
-    }),
-    marginLeft: 'auto',
-  },
-  expandOpen: {
-    transform: 'rotate(180deg)',
-  },
-  avatar: {
-    backgroundColor: red[500],
-  },
+
 });
 
-class AboutUs extends React.Component {
-  state = { expanded: false };
+function AboutUs (props){
+  const { classes } = props;
 
-  handleExpandClick = () => {
-    this.setState(state => ({ expanded: !state.expanded }));
-  };
-
-  render() {
-    const { classes } = this.props;
-
+  // render() {
     return (
       <div>
-        <Card className={classes.card}>
-          <CardHeader
-            avatar={
-              <Avatar aria-label="Recipe" className={classes.avatar}>
-                R
-              </Avatar>
-            }
-            action={
-              <IconButton>
-                <MoreVertIcon />
-              </IconButton>
-            }
-            title="Shrimp"
-            subheader="September 14, 2016"
-          />
-          <CardMedia
-            className={classes.media}
-            image="/static/images/cards/paella.jpg"
-            title="Contemplative Reptile"
-          />
-          <CardContent>
-            <Typography component="p">
-              This impressive paella is a perfect party dish and a fun meal to cook together with
-              your guests. Add 1 cup of frozen peas along with the mussels, if you like.
-            </Typography>
-          </CardContent>
-          <CardActions className={classes.actions} disableActionSpacing>
-            <IconButton aria-label="Add to favorites">
-              <FavoriteIcon />
-            </IconButton>
-            <IconButton aria-label="Share">
-              <ShareIcon />
-            </IconButton>
-            <IconButton
-              className={classnames(classes.expand, {
-                [classes.expandOpen]: this.state.expanded,
-              })}
-              onClick={this.handleExpandClick}
-              aria-expanded={this.state.expanded}
-              aria-label="Show more"
-            >
-              <ExpandMoreIcon />
-            </IconButton>
-          </CardActions>
-          <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
-            <CardContent>
-              <Typography paragraph variant="body2">
-                Method:
-              </Typography>
-              <Typography paragraph>
-                Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-                minutes.
-              </Typography>
-              <Typography paragraph>
-                Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-                heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-                browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving
-                chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion,
-                salt and pepper, and cook, stirring often until thickened and fragrant, about 10
-                minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-              </Typography>
-              <Typography paragraph>
-                Add rice and stir very gently to distribute. Top with artichokes and peppers, and
-                cook without stirring, until most of the liquid is absorbed, 15 to 18 minutes.
-                Reduce heat to medium-low, add reserved shrimp and mussels, tucking them down into
-                the rice, and cook again without stirring, until mussels have opened and rice is
-                just tender, 5 to 7 minutes more. (Discard any mussels that don’t open.)
-              </Typography>
-              <Typography>
-                Set aside off of the heat to let rest for 10 minutes, and then serve.
-              </Typography>
-            </CardContent>
-          </Collapse>
-        </Card>
+        <div className="about-banner">
+          <div className="about-over-banner">
+            <div className="center">
+              <Typography variant="display1" className="white-text bold">Make the codes into worship</Typography>
+              <Typography variant="subheading" className="white-text">Lorem ipsum dolor sit amet, sadipscing temporibus his at</Typography>
+            </div>
+          </div>
+        </div>
+        <div className={classes.root} >
+          <Grid container spacing={8} className="pb50">
+              <Grid item md={6} sm={12} xs={12}>
+                <div className="center">
+                  <img src={require('./../../images/reaching-team.png')} className={classes.image} alt=""/>
+                </div>
+              </Grid>
+              <Grid item md={6} sm={12} xs={12}>
+                  {/* <div className="center"> */}
+                    <Typography variant="display1" className="bold uppercase" style={{color:'black',paddingLeft: '5%', paddingRight: '5%',}}>Who We Are ?</Typography>
+                    <Typography className="pt20"  gutterBottom style={{paddingLeft: '5%', paddingRight: '5%',}}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit eu augue ut hendrerit. Donec imperdiet vestibulum egestas. Pellentesque ut eros finibus, gravida arcu non, facilisis ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ultrices velit ante, non interdum nisi interdum vels. 
+                    </Typography>
+                    <Typography className="pt20"  gutterBottom style={{paddingLeft: '5%', paddingRight: '5%',}}>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit eu augue ut hendrerit. Donec imperdiet vestibulum egestas. Pellentesque ut eros finibus, gravida arcu non, facilisis ante. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque ultrices velit ante, non interdum nisi interdum vels. 
+                    </Typography>
+                  {/* </div> */}
+              </Grid>
+          </Grid>
+        </div>
+        <div className="grey pt50 pb50">
+          <div  className={classes.root_card}>
+              <Grid container spacing={8}>
+                  <Grid item md={6} sm={12} xs={12}>
+                      <Card className={classes.card}>
+                          <CardMedia
+                            className={classes.media}
+                            image="https://cdn.scotch.io/3646/0jaBd12LSNKJjlQNaWXb_1478124608-elefanto_wallpaper.png.jpg"
+                            title="Projects"                
+                          />
+                           <CardContent>
+                              <Typography gutterBottom variant="headline" component="h2">
+                                PHP Projects
+                              </Typography>
+                              <Typography component="p">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit eu augue ut hendrerit.
+                              </Typography>
+                            </CardContent>
+                      </Card>
+                  </Grid>
+                  <Grid item md={6} sm={12} xs={12}>
+                      <Card className={classes.card}>
+                          <CardMedia
+                            className={classes.media}
+                            image="https://careerfoundry.com/en/blog/difference-between-ux-ui-ux-ui-min-6cd3a171087987d31ecdb67ad67c0ab8136242f7b4e476a0e509017aa8bbc755.png"
+                            title="Projects"                
+                          />
+                           <CardContent>
+                              <Typography gutterBottom variant="headline" component="h2">
+                                UI / UX Projects
+                              </Typography>
+                              <Typography component="p">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit eu augue ut hendrerit.
+                              </Typography>
+                            </CardContent>
+                      </Card>
+                  </Grid>
+                  <Grid item md={6} sm={12} xs={12}>
+                      <Card className={classes.card}>
+                          <CardMedia
+                            className={classes.media}
+                            image="http://www.appadhoc.com/blog/wp-content/uploads/2017/07/onboarding-experience.png"
+                            title="Projects"                
+                          />
+                           <CardContent>
+                              <Typography gutterBottom variant="headline" component="h2">
+                                Mobile Projects
+                              </Typography>
+                              <Typography component="p">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit eu augue ut hendrerit.
+                              </Typography>
+                            </CardContent>
+                      </Card>
+                  </Grid>
+                  <Grid item md={6} sm={12} xs={12}>
+                      <Card className={classes.card}>
+                          <CardMedia
+                            className={classes.media}
+                            image="https://www.valuecoders.com/blog/wp-content/uploads/2016/08/react.png"
+                            title="Projects"                
+                          />
+                           <CardContent>
+                              <Typography gutterBottom variant="headline" component="h2">
+                                React JS Projects
+                              </Typography>
+                              <Typography component="p">
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit eu augue ut hendrerit.
+                              </Typography>
+                            </CardContent>
+                      </Card>
+                  </Grid>
+                  
+              </Grid>
+            </div>
+        </div>
+        <Grid className="pt50 pb50" item xs={8} sm={8} md={8} style={{marginLeft:'15%'}}>
+            <div className="subscribe-card pb50">
+                <div className={classes.root}>
+                    <Grid container spacing={8}>
+                        <Grid  item md={8} sm={12} xs={12} className="" style={{paddingRight:'30px'}}>
+                            <Typography variant="display1" style={{color:'rgba(0,0,0,.9)'}}>Get Ready To Start ?</Typography>
+                            <Typography>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit eu augue ut hendrerit. Donec imperdiet vestibulum egestas.
+                            </Typography>
+                        </Grid>
+                        <Grid  item md={4} sm={12} xs={12} className="pt20 center">
+                            <Button variant="extendedFab" aria-label="delete" className="orange btn-banner white-text">
+                                 join us
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </div>
+            </div>
+        </Grid>
       </div>
     );
-  }
+  // }
 }
 
 AboutUs.propTypes = {
   classes: PropTypes.object.isRequired,
 };
-
-export default withStyles(styles)(AboutUs);
+export default withStyles(style)(AboutUs);

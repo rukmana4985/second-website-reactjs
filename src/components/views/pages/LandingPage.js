@@ -2,7 +2,7 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import  Typography  from '@material-ui/core/Typography';
-import { Hidden, Card, TextField } from '@material-ui/core';
+import { Hidden } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
@@ -181,7 +181,7 @@ const styles = theme => ({
                     <div className="to-bottom-banner ">
                         <Grid item md={7} style={{marginLeft: '20%', marginRight: '20%',}}>
                             <div className={classes.root}>
-                                <Grid container spacing={10} className="pt50"> 
+                                <Grid container spacing={8} className="pt50"> 
                                     <div className="center">
                                         <Hidden only={['xs', 'sm']}>
                                             <Grid item xs={12} sm={12}>
@@ -212,9 +212,9 @@ const styles = theme => ({
                 <Grid className="pt50 pb50" item xs={8} sm={8} md={8} style={{marginLeft:'15%'}}>
                     <div className="subscribe-card pb50">
                         <div className={classes.root}>
-                            <Grid container spacing={10}>
+                            <Grid container spacing={8}>
                                 <Grid  item md={8} sm={12} xs={12} className="" style={{paddingRight:'30px'}}>
-                                    <Typography variant="display1">Get Ready To Start ?</Typography>
+                                    <Typography variant="display1" style={{color:'rgba(0,0,0,.9)'}}>Get Ready To Start ?</Typography>
                                     <Typography>
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit eu augue ut hendrerit. Donec imperdiet vestibulum egestas.
                                     </Typography>
