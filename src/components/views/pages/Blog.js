@@ -1,27 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Card, CardContent, Typography, Grid, CardMedia, CardActions, Button } from '@material-ui/core';
-import withStyles from '@material-ui/core/styles';
-import PropTypes from 'prop-types';
-
-const root = {
-    flexGrow: 1,
-    width : '80%',
-    marginLeft : '10%',
-    marginTop: '5%',
-}
-
-const card = theme => ({
-    padding: theme.spacing.unit * 2,
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-});
 
 
 
 
 
-export default class Blog extends Component
+
+
+
+ class Blog extends Component
 {
 
 
@@ -37,18 +25,11 @@ export default class Blog extends Component
                 const persons = res.data;
                 this.setState({persons});
             });
-            axios.get('https://jsonplaceholder.typicode.com/photos?_start=9&_limit=9')
-            .then(res => {
-                const images = res.data;
-                this.setState({images});
-            });
+            
     }
 
-
-
-    
-    
     render(){
+
         return(
             <div>
                 <div className="blog-banner">
@@ -64,8 +45,8 @@ export default class Blog extends Component
                     <br/>
                     <Grid container spacing={24} className="pb50">
                         {this.state.persons.map(person =>
-                        <Grid item md={4} sm={12} xs={12}>
-                            <Card className={card}>
+                        <Grid item md={4} sm={12} xs={12}  key={person.id}>
+                            <Card >
                             {/* {this.state.images.map(image => */}
                             <CardMedia
                                 style={{ height: 0,paddingTop: '56.25%'}}
@@ -97,3 +78,5 @@ export default class Blog extends Component
         );
     }
 }
+
+export default Blog;

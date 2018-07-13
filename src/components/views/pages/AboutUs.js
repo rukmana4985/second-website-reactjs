@@ -22,7 +22,7 @@ const style = theme => ({
   paper: {
     padding: theme.spacing.unit * 2,
     textAlign: 'center',
-      color: theme.palette.text.secondary,
+    color: theme.palette.text.secondary,
   },
   image : {
     width : '100%'
@@ -159,7 +159,7 @@ function AboutUs (props){
                             </Typography>
                         </Grid>
                         <Grid  item md={4} sm={12} xs={12} className="pt20 center">
-                            <Button variant="extendedFab" aria-label="delete" className="orange btn-banner white-text">
+                            <Button variant="extendedFab" aria-label="delete" className="orange btn-banner white-text" style={{marginTop:'15%'}}>
                                  join us
                             </Button>
                         </Grid>

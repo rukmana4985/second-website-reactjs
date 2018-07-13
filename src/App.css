@@ -115,3 +115,9 @@
   background: linear-gradient(  rgba(240, 218, 129, 0.6), rgba(241, 170, 94, 0.9)), url('./components/images/gustavo-centurion-665623-unsplash.jpg') center  no-repeat ;
   background-size: cover;
 }
+.contact-banner{
+  max-width: 100%;
+  height: 380px;
+  background: linear-gradient(  rgba(240, 218, 129, 0.5), rgba(241, 170, 94, 0.9)), url('./components/images/contact.jpg') center  no-repeat ;
+  background-size: cover;
+}

@@ -184,14 +184,14 @@ const styles = theme => ({
                                 <Grid container spacing={8} className="pt50"> 
                                     <div className="center">
                                         <Hidden only={['xs', 'sm']}>
-                                            <Grid item xs={12} sm={12}>
+                                            <Grid item md={12}>
                                                 <Typography variant="display1" className="bold white-text">
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                                 </Typography>
                                             </Grid>
                                         </Hidden>
-                                        <Hidden only='md'>
-                                            <Grid item md={12}>
+                                        <Hidden only={['md', 'lg']}>
+                                            <Grid item xs={12} sm={12}>
                                                 <Typography variant="subheading" className="bold white-text">
                                                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                                 </Typography>
@@ -219,8 +219,8 @@ const styles = theme => ({
                                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam blandit eu augue ut hendrerit. Donec imperdiet vestibulum egestas.
                                     </Typography>
                                 </Grid>
-                                <Grid  item md={4} sm={12} xs={12} className="pt20 center">
-                                    <Button variant="extendedFab" aria-label="delete" className="orange btn-banner white-text">
+                                <Grid  item md={4} sm={12} xs={12} className="pt50 center">
+                                    <Button variant="extendedFab" aria-label="delete" className="orange btn-banner white-text" style={{marginTop:'15%'}}>
                                         Get Start
                                     </Button>
                                 </Grid>
